@@ -22,7 +22,14 @@ function renderApp() {
     {
       className: 'main',
     },
-    [createCharacterCard()]
+    [
+      createCharacterCard({ name: 'Rick' }),
+      createCharacterCard({ name: 'Morty' }),
+      createCharacterCard({ name: 'Morty' }),
+      createCharacterCard({ name: 'Morty' }),
+      createCharacterCard({ name: 'Morty' }),
+      createCharacterCard({ name: 'Morty' }),
+    ]
   );
 
   appElement.append(headerElement, mainElement);
