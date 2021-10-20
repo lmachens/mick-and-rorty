@@ -23,12 +23,22 @@ function renderApp() {
       className: 'main',
     },
     [
-      createCharacterCard({ name: 'Rick' }),
-      createCharacterCard({ name: 'Morty' }),
-      createCharacterCard({ name: 'Morty' }),
-      createCharacterCard({ name: 'Morty' }),
-      createCharacterCard({ name: 'Morty' }),
-      createCharacterCard({ name: 'Morty' }),
+      createCharacterCard({
+        name: 'Pawnshop Clerk',
+        imgSrc: 'https://rickandmortyapi.com/api/character/avatar/258.jpeg',
+        status: 'Alive',
+        race: 'Alien',
+        lastKnownLocation: 'Pawn Shop Planet',
+        firstSeenIn: 'Raising Gazorpazorp',
+      }),
+      createCharacterCard({
+        name: 'Pencilvester',
+        imgSrc: 'https://rickandmortyapi.com/api/character/avatar/259.jpeg',
+        status: 'Dead',
+        race: 'Alien',
+        lastKnownLocation: 'Earth (Replacement Dimension)',
+        firstSeenIn: 'Total Rickall',
+      }),
     ]
   );
 
