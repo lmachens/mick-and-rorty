@@ -17,29 +17,43 @@ function renderApp() {
     ]
   );
 
+  const characters = [
+    {
+      name: 'Pawnshop Clerk',
+      imgSrc: 'https://rickandmortyapi.com/api/character/avatar/258.jpeg',
+      status: 'Alive',
+      race: 'Alien',
+      lastKnownLocation: 'Pawn Shop Planet',
+      firstSeenIn: 'Raising Gazorpazorp',
+    },
+    {
+      name: 'Pencilvester',
+      imgSrc: 'https://rickandmortyapi.com/api/character/avatar/259.jpeg',
+      status: 'Dead',
+      race: 'Alien',
+      lastKnownLocation: 'Earth (Replacement Dimension)',
+      firstSeenIn: 'Total Rickall',
+    },
+    {
+      name: 'Dr. Xenon Bloom',
+      imgSrc: 'https://rickandmortyapi.com/api/character/avatar/108.jpeg',
+      status: 'Dead',
+      race: 'Humanoid',
+      lastKnownLocation: 'Anatomy Park',
+      firstSeenIn: 'Anatomy Park',
+    },
+  ];
+
+  const characterCards = characters.map((character) =>
+    createCharacterCard(character)
+  );
+
   const mainElement = createElement(
     'main',
     {
       className: 'main',
     },
-    [
-      createCharacterCard({
-        name: 'Pawnshop Clerk',
-        imgSrc: 'https://rickandmortyapi.com/api/character/avatar/258.jpeg',
-        status: 'Alive',
-        race: 'Alien',
-        lastKnownLocation: 'Pawn Shop Planet',
-        firstSeenIn: 'Raising Gazorpazorp',
-      }),
-      createCharacterCard({
-        name: 'Pencilvester',
-        imgSrc: 'https://rickandmortyapi.com/api/character/avatar/259.jpeg',
-        status: 'Dead',
-        race: 'Alien',
-        lastKnownLocation: 'Earth (Replacement Dimension)',
-        firstSeenIn: 'Total Rickall',
-      }),
-    ]
+    characterCards
   );
 
   appElement.append(headerElement, mainElement);
