@@ -3,7 +3,7 @@ import styles from './characterCard.module.css';
 
 export default function createCharacterCard({
   name,
-  imgSrc,
+  image,
   status,
   race,
   lastKnownLocation,
@@ -15,7 +15,7 @@ export default function createCharacterCard({
       className: styles.card,
     },
     [
-      createElement('img', { className: styles.img, src: imgSrc, alt: '' }),
+      createElement('img', { className: styles.img, src: image, alt: '' }),
       createElement('h2', { textContent: name }),
       createElement('p', { textContent: `${status} - ${race}` }),
       createElement('h3', { textContent: 'Last known location:' }),
