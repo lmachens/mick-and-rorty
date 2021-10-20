@@ -45,6 +45,8 @@ h5 {
 }
 
 .main {
+  display: grid;
+  row-gap: 1rem;
   background-color: var(--color-background-main);
   color: var(--color-main-text);
   padding: 2rem 2rem;
