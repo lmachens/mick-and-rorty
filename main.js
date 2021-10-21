@@ -1,6 +1,7 @@
 import { createElement } from './lib/elements';
 import './style.css';
 import createCharacterCard from './components/characterCard';
+import createSearchBar from './components/searchBar';
 import { fetchCharacters } from './lib/characters';
 
 async function renderApp() {
@@ -18,6 +19,13 @@ async function renderApp() {
     ]
   );
 
+  function handleSubmit(searchQuery) {
+    //fetch specific from API
+    //Add new characterCards to main element
+  }
+
+  const searchBar = createSearchBar(handleSubmit);
+
   const characters = await fetchCharacters();
 
   const characterCards = characters.map((character) =>
@@ -32,7 +40,7 @@ async function renderApp() {
     characterCards
   );
 
-  appElement.append(headerElement, mainElement);
+  appElement.append(headerElement, searchBar, mainElement);
 }
 
 renderApp();
