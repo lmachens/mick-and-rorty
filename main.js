@@ -19,9 +19,19 @@ async function renderApp() {
     ]
   );
 
-  function handleSubmit(searchQuery) {
-    //fetch specific from API
-    //Add new characterCards to main element
+  async function handleSubmit(searchQuery) {
+    console.log(searchQuery);
+    const response = await fetch(
+      `https://rickandmortyapi.com/api/character/?name=${searchQuery}`
+    );
+    const body = await response.json();
+    const characters = body.results;
+    const characterElements = characters.map((character) =>
+      createCharacterCard(character)
+    );
+    console.log(characterElements);
+    mainElement.innerHTML = '';
+    mainElement.append(...characterElements);
   }
 
   const searchBar = createSearchBar(handleSubmit);
