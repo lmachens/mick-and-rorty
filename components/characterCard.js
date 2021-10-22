@@ -6,7 +6,7 @@ export default function createCharacterCard({
   image,
   status,
   species,
-  lastKnownLocation,
+  location,
   episode,
 }) {
   const firstEpisode = episode[0];
@@ -28,7 +28,7 @@ export default function createCharacterCard({
       }),
       createElement('h3', { textContent: 'Last known location:' }),
       createElement('p', {
-        textContent: lastKnownLocation,
+        textContent: location.name,
       }),
       createElement('h3', { textContent: 'First seen in:' }),
       firstEpisodeElement,
