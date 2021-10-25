@@ -6,10 +6,12 @@ export default function createCharacterCard({
   image,
   status,
   species,
-  lastKnownLocation,
+  location,
   episode,
 }) {
   const firstEpisode = episode[0];
+
+  const statusEmoji = { Alive: '💚', Dead: '💀', unknown: '❓' };
 
   const firstEpisodeElement = createElement('p', { textContent: 'Loading...' });
 
@@ -21,10 +23,12 @@ export default function createCharacterCard({
     [
       createElement('img', { className: styles.img, src: image, alt: '' }),
       createElement('h2', { textContent: name }),
-      createElement('p', { textContent: `${status} - ${species}` }),
+      createElement('p', {
+        textContent: `Status: ${statusEmoji[status]} ${status} | Species: ${species}`,
+      }),
       createElement('h3', { textContent: 'Last known location:' }),
       createElement('p', {
-        textContent: lastKnownLocation,
+        textContent: location.name,
       }),
       createElement('h3', { textContent: 'First seen in:' }),
       firstEpisodeElement,
